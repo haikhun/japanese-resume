@@ -41,10 +41,53 @@
         }
         window.onload = askPassword;
     </script>
+    <style>
+        #floating-menu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            font-family: sans-serif;
+        }
+    </style>
+
+    <div id="floating-menu">
+        <select onchange="location.href=this.value">
+            <option selected disabled>📌 質問へジャンプ</option>
+            <option value="#Q01">Q01 - 自我紹介</option>
+            <option value="#Q01.1">Q01.1 - 共感理由</option>
+            <option value="#Q02">Q02 - 経歴要約</option>
+            <option value="#Q02.1">Q02.1 - 工夫した点</option>
+            <option value="#Q03">Q03 - 前職の仕事内容</option>
+            <option value="#Q04">Q04 - 辞職理由</option>
+            <option value="#Q05">Q05 - 志望動機</option>
+            <option value="#Q06">Q06 - 自分の強み</option>
+            <option value="#Q07">Q07 - 失敗経験</option>
+            <option value="#Q08">Q08 - 困難な経験</option>
+            <option value="#Q09">Q09 - チームでの役割</option>
+            <option value="#Q10">Q10 - チームでの衝突</option>
+            <option value="#Q11">Q11 - ストレス対処</option>
+            <option value="#Q12">Q12 - 残業や休日対応</option>
+            <option value="#Q13">Q13 - 最近注目している技術</option>
+            <option value="#Q14">Q14 - 逆質問</option>
+            <option value="#Q15">Q15 - 希望年収</option>
+            <option value="#Q16">Q16 - 転職理由</option>
+            <option value="#Q17">Q17 - 現在の活動状況</option>
+            <option value="#Q18">Q18 - 入社可能時期</option>
+            <option value="#Q19">Q19 - 海外事業への関心</option>
+            <option value="#Q20">Q20 - 他社の選考状況</option>
+            <option value="#Q21">Q21 - 自己PR</option>
+        </select>
+    </div>
     <h1>面接スクリプト</h1>
     <div id="content"></div>
     <div>
-        <p><b>Q01 - 自我紹介</b><audio id="audio_Q01" src="voice/Q01.mp3"></audio><button
+        <p id="Q01"><b>Q01 - 自我紹介</b><audio id="audio_Q01" src="voice/Q01.mp3"></audio><button
                 onclick="document.getElementById('audio_Q01').play()">&#9654; 再生</button></p>
         <p><ruby>本日<rt>ほんじつ</rt></ruby>はお<ruby>時間<rt>じかん</rt></ruby>をいただき、ありがとうございます。</p>
 
@@ -94,7 +137,7 @@
         <p><ruby>本日<rt>ほんじつ</rt></ruby>はどうぞよろしくお<ruby>願<rt>ねが</rt>
             </ruby>いいたします。</p>
         <br>
-        <p><b>Q01.1 共感理由</b><audio id="audio_Q01.1" src="voice/Q01.1.mp3"></audio><button
+        <p id="Q01.1"><b>Q01.1 共感理由</b><audio id="audio_Q01.1" src="voice/Q01.1.mp3"></audio><button
                 onclick="document.getElementById('audio_Q01.1').play()">&#9654; 再生</button></p>
         <br>
         <p>はい、<ruby>私<rt>わたし</rt></ruby><ruby>自身<rt>じしん</rt></ruby>も、<ruby>能力<rt>のうりょく</rt></ruby>や<ruby>価値<rt>かち</rt>
@@ -108,7 +151,7 @@
             </ruby>して、<ruby>正しく<rt>ただしく</rt></ruby><ruby>届ける<rt>とど</rt></ruby>」ことに<ruby>取り組む<rt>とりくむ</rt>
             </ruby><ruby>サービス<rt>さーびす</rt></ruby>に<ruby>共感<rt>きょうかん</rt></ruby>しました。</p>
         <br>
-        <p><b>Q02 - 経歴の要約説明</b><audio id="audio_Q02" src="voice/Q02.mp3"></audio><button
+        <p id="Q02"><b>Q02 - 経歴の要約説明</b><audio id="audio_Q02" src="voice/Q02.mp3"></audio><button
                 onclick="document.getElementById('audio_Q02').play()">&#9654; 再生</button></p>
         <p><ruby>前職<rt>ぜんしょく</rt></ruby>では、<ruby>台湾<rt>たいわん</rt></ruby>のIT<ruby>企業<rt>きぎょう</rt></ruby>で<ruby>データ<rt>でーた
                 </rt></ruby><ruby>サイエンティスト<rt>さいえんてぃすと</rt></ruby>として<ruby>働い<rt>はたら</rt></ruby>ていました。</p>
@@ -153,7 +196,7 @@
                 <rt>み</rt>
             </ruby>についたと<ruby>感じ<rt>かんじ</rt></ruby>ています。</p>
         <br>
-        <p><b>Q02.1 どんな工夫をしたのですか？</b><audio id="audio_Q02.1" src="voice/Q02.1.mp3"></audio><button
+        <p id="Q02.1"><b>Q02.1 どんな工夫をしたのですか？</b><audio id="audio_Q02.1" src="voice/Q02.1.mp3"></audio><button
                 onclick="document.getElementById('audio_Q02.1').play()">&#9654; 再生</button></p>
         <br>
         <p><ruby>例えば<rt>たと</rt></ruby>、<ruby>モデル<rt>もでる</rt></ruby>で<ruby>使う<rt>つか</rt></ruby><ruby>特徴<rt>とくちょう</rt>
@@ -166,7 +209,7 @@
             </ruby>ておいて、<ruby>モデル<rt>もでる</rt></ruby>や<ruby>他<rt>ほか</rt></ruby>の<ruby>処理<rt>しょり</rt>
             </ruby>がすぐに<ruby>参照<rt>さんしょう</rt></ruby>できるようにしました。</p>
         <br>
-        <p><b>Q03 - 現職または前職の仕事内容</b><audio id="audio_Q03" src="voice/Q03.mp3"></audio><button
+        <p id="Q03"><b>Q03 - 現職または前職の仕事内容</b><audio id="audio_Q03" src="voice/Q03.mp3"></audio><button
                 onclick="document.getElementById('audio_Q03').play()">&#9654; 再生</button></p>
         <p><ruby>前職<rt>ぜんしょく</rt></ruby>では、<ruby>台湾<rt>たいわん</rt></ruby>のIT<ruby>企業<rt>きぎょう</rt></ruby>で<ruby>交通<rt>こうつう
                 </rt></ruby><ruby>関連<rt>かんれん</rt></ruby>のAI<ruby>システム<rt>しすてむ</rt></ruby>の<ruby>開発<rt>かいはつ</rt>
@@ -195,7 +238,7 @@
             </ruby><ruby>特徴<rt>とくちょう</rt></ruby><ruby>量<rt>りょう</rt></ruby>の<ruby>追加<rt>ついか</rt>
             </ruby>を<ruby>提案<rt>ていあん</rt></ruby>しながら<ruby>対応<rt>たいおう</rt></ruby>しました。</p>
         <br>
-        <p><b>Q04 - 参加した開発プロジェクトの内容と成果</b><audio id="audio_Q04" src="voice/Q04.mp3"></audio><button
+        <p id="Q04"><b>Q04 - 参加した開発プロジェクトの内容と成果</b><audio id="audio_Q04" src="voice/Q04.mp3"></audio><button
                 onclick="document.getElementById('audio_Q04').play()">&#9654; 再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>は、<ruby>台湾<rt>たいわん</rt></ruby>の<ruby>空港<rt>くうこう</rt></ruby>でAIを<ruby>使っ<rt>つか</rt>
             </ruby>た<ruby>予測<rt>よそく</rt></ruby><ruby>システム<rt>しすてむ</rt></ruby>の<ruby>開発<rt>かいはつ</rt></ruby>を<ruby>担当
@@ -236,7 +279,8 @@
             </ruby>まで<ruby>一人<rt>ひとり</rt></ruby>で<ruby>対応<rt>たいおう</rt></ruby>しました。</p>
         <p>例外は、たとえば、<ruby>本番<rt>ほんばん</rt></ruby><ruby>環境<rt>かんきょう</rt></ruby>では、<ruby>英字<rt>えいじ</rt></ruby>だけの<ruby>フライト
                 <rt>
-                    ふらいと</rt></ruby><ruby>番号<rt>ばんごう</rt></ruby>が<ruby>入り<rt>はい</rt></ruby>、<ruby>トレーニングデータ
+                    ふらいと</rt>
+            </ruby><ruby>番号<rt>ばんごう</rt></ruby>が<ruby>入り<rt>はい</rt></ruby>、<ruby>トレーニングデータ
             </ruby>に<ruby>存在<rt>そんざい</rt></ruby>しなかったため<ruby>処理<rt>しょり</rt>
             </ruby><ruby>エラー<rt>えらー</rt></ruby>になりました。</p>
         <p>このような<ruby>場合<rt>ばあい</rt></ruby>、<ruby>処理<rt>しょり</rt></ruby>を<ruby>止め<rt>とめ</rt></ruby>ずに<ruby>スキップ<rt>すきっぷ
@@ -247,7 +291,7 @@
                     くうこう</rt></ruby>ではこの<ruby>予測<rt>よそく</rt></ruby>を<ruby>使っ<rt>つか</rt></ruby>て<ruby>スタッフ<rt>すたっふ</rt>
             </ruby>の<ruby>人数<rt>にんずう</rt></ruby>を<ruby>調整<rt>ちょうせい</rt></ruby>するようになりました。</p>
         <br>
-        <p><b>Q05 - 使用した技術スタック・言語・ツール</b><audio id="audio_Q05" src="voice/Q05.mp3"></audio><button
+        <p id="Q05"><b>Q05 - 使用した技術スタック・言語・ツール</b><audio id="audio_Q05" src="voice/Q05.mp3"></audio><button
                 onclick="document.getElementById('audio_Q05').play()">&#9654; 再生</button></p>
         <p><ruby>実務<rt>じつむ</rt></ruby>では、<ruby>データ<rt>でーた</rt></ruby><ruby>分析<rt>ぶんせき</rt></ruby>やAI<ruby>モデル<rt>もでる
                 </rt></ruby><ruby>開発<rt>かいはつ</rt></ruby>の<ruby>一連<rt>いちれん</rt></ruby>の<ruby>流れ<rt>ながれ</rt>
@@ -281,7 +325,7 @@
                 <rt>しく</rt>
             </ruby>も<ruby>自分<rt>じぶん</rt></ruby>で<ruby>整備<rt>せいび</rt></ruby>しました。</p>
         <br>
-        <p><b>Q06 - プロジェクトの流れと自分の役割</b><audio id="audio_Q06" src="voice/Q06.mp3"></audio><button
+        <p id="Q06"><b>Q06 - プロジェクトの流れと自分の役割</b><audio id="audio_Q06" src="voice/Q06.mp3"></audio><button
                 onclick="document.getElementById('audio_Q06').play()">&#9654; 再生</button></p>
         <p><ruby>プロジェクト<rt>ぷろじぇくと</rt></ruby>は、PMが<ruby>公共<rt>こうきょう</rt></ruby><ruby>機関<rt>きかん</rt></ruby>と<ruby>連携<rt>
                     れんけい</rt></ruby>し、<ruby>クライアント<rt>くらいあんと</rt></ruby>の<ruby>課題<rt>かだい</rt></ruby>や<ruby>要望<rt>ようぼう
@@ -326,7 +370,7 @@
             </ruby>を<ruby>作成<rt>さくせい</rt></ruby>し、<ruby>クライアント<rt>くらいあんと</rt></ruby>への<ruby>報告<rt>ほうこく</rt>
             </ruby>も<ruby>担当<rt>たんとう</rt></ruby>しました。</p>
         <br>
-        <p><b>Q07 - 工夫した点・改善ポイント</b><audio id="audio_Q07" src="voice/Q07.mp3"></audio><button
+        <p id="Q07"><b>Q07 - 工夫した点・改善ポイント</b><audio id="audio_Q07" src="voice/Q07.mp3"></audio><button
                 onclick="document.getElementById('audio_Q07').play()">&#9654; 再生</button></p>
         <p><ruby>前職<rt>ぜんしょく</rt></ruby>では、<ruby>道路<rt>どうろ</rt></ruby><ruby>監視<rt>かんし</rt></ruby><ruby>器<rt>き</rt>
             </ruby>の<ruby>画面<rt>がめん</rt></ruby>を<ruby>毎日<rt>まいにち</rt></ruby><ruby>人<rt>ひと</rt></ruby>の<ruby>目<rt>め
@@ -351,7 +395,7 @@
             </ruby>は<ruby>他<rt>ほか</rt></ruby>の<ruby>業務<rt>ぎょうむ</rt></ruby>に<ruby>集中<rt>しゅうちゅう</rt>
             </ruby>できるようになりました。</p>
         <br>
-        <p><b>Q08 - 自分の強みとチームへの貢献</b><audio id="audio_Q08" src="voice/Q08.mp3"></audio><button
+        <p id="Q08"><b>Q08 - 自分の強みとチームへの貢献</b><audio id="audio_Q08" src="voice/Q08.mp3"></audio><button
                 onclick="document.getElementById('audio_Q08').play()">&#9654; 再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>の<ruby>強み<rt>つよ</rt></ruby>は、<ruby>分かり<rt>わか</rt></ruby>やすく<ruby>伝える<rt>つた</rt>
             </ruby><ruby>力<rt>ちから</rt></ruby>と、<ruby>自学<rt>じがく</rt></ruby><ruby>力<rt>りょく</rt></ruby>です。</p>
@@ -372,7 +416,7 @@
         <p>これらの<ruby>経験<rt>けいけん</rt></ruby>を<ruby>活かし<rt>い</rt></ruby>て、これからも<ruby>積極<rt>せっきょく</rt></ruby><ruby>的<rt>てき
                 </rt></ruby>に<ruby>成長<rt>せいちょう</rt></ruby>していきたいと<ruby>考え<rt>かんが</rt></ruby>ています。</p>
         <br>
-        <p><b>Q09 - 今後のキャリアで重視すること</b><audio id="audio_Q09" src="voice/Q09.mp3"></audio><button
+        <p id="Q09"><b>Q09 - 今後のキャリアで重視すること</b><audio id="audio_Q09" src="voice/Q09.mp3"></audio><button
                 onclick="document.getElementById('audio_Q09').play()">&#9654; 再生</button></p>
         <p><ruby>今後<rt>こんご</rt></ruby>の<ruby>キャリア<rt>きゃりあ</rt></ruby>で<ruby>重視<rt>じゅうし</rt></ruby>しているのは、「<ruby>技術力<rt>
                     ぎじゅつりょく
@@ -404,7 +448,7 @@
             </ruby>ていく<ruby>職場<rt>しょくば</rt></ruby>は、わたしにとって<ruby>理想的<rt>りそうてき</rt></ruby>な<ruby>環境<rt>
                     かんきょう</rt></ruby>です。</p>
         <br>
-        <p><b>Q10 - 大学時代の研究内容</b><audio id="audio_Q10" src="voice/Q10.mp3"></audio><button
+        <p id="Q10"><b>Q10 - 大学時代の研究内容</b><audio id="audio_Q10" src="voice/Q10.mp3"></audio><button
                 onclick="document.getElementById('audio_Q10').play()">&#9654; 再生</button></p>
         <p><ruby>修士<rt>しゅうし</rt></ruby><ruby>論文<rt>ろんぶん</rt></ruby>では、<ruby>ネットワーク<rt>ねっとわーく</rt></ruby><ruby>ルーター<rt>
                     るーたー</rt></ruby>における<ruby>パケット<rt>ぱけっと</rt></ruby><ruby>転送<rt>てんそう</rt></ruby>の<ruby>ルート<rt>るーと</rt>
@@ -431,7 +475,7 @@
             </ruby>していて、<ruby>今<rt>いま</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>に<ruby>役立っ<rt>やくた</rt>
             </ruby>ていると<ruby>感じ<rt>かん</rt></ruby>ています。</p>
         <br>
-        <p><b>Q11 - マネジメントやチームビルディングへの志向</b><audio id="audio_Q11" src="voice/Q11.mp3"></audio><button
+        <p id="Q11"><b>Q11 - マネジメントやチームビルディングへの志向</b><audio id="audio_Q11" src="voice/Q11.mp3"></audio><button
                 onclick="document.getElementById('audio_Q11').play()">&#9654; 再生</button></p>
         <p>はい、<ruby>将来<rt>しょうらい</rt></ruby>は<ruby>マネジメント<rt>まねじめんと</rt></ruby>にも<ruby>挑戦<rt>ちょうせん</rt>
             </ruby>してみたいと<ruby>考え<rt>かんが</rt></ruby>ています。</p>
@@ -456,7 +500,7 @@
             </ruby>し、その<ruby>先<rt>さき</rt></ruby>で<ruby>マネジメント<rt>まねじめんと</rt></ruby>にも<ruby>チャレンジ<rt>ちゃれんじ</rt>
             </ruby>したいと<ruby>考え<rt>かんが</rt></ruby>ています。</p>
         <br>
-        <p><b>Q12 - テックオーシャンに入社した場合の貢献と成長目標</b><audio id="audio_Q12" src="voice/Q12.mp3"></audio><button
+        <p id="Q12"><b>Q12 - テックオーシャンに入社した場合の貢献と成長目標</b><audio id="audio_Q12" src="voice/Q12.mp3"></audio><button
                 onclick="document.getElementById('audio_Q12').play()">&#9654; 再生</button></p>
         <p><ruby>入社<rt>にゅうしゃ</rt></ruby><ruby>後<rt>ご</rt></ruby>は、まずは<ruby>御<rt>おん</rt></ruby><ruby>社<rt>しゃ</rt>
             </ruby>の<ruby>サービス<rt>さーびす</rt></ruby>や<ruby>データ<rt>でーた</rt></ruby>の<ruby>構造<rt>こうぞう</rt>
@@ -482,7 +526,7 @@
             </ruby>や、より<ruby>深い<rt>ふか</rt></ruby><ruby>分析<rt>ぶんせき</rt></ruby>にも<ruby>挑戦<rt>ちょうせん</rt>
             </ruby>していきたいと<ruby>考え<rt>かんが</rt></ruby>ています。</p>
         <br>
-        <p><b>Q13 - 前向きな姿勢のアピール</b><audio id="audio_Q13" src="voice/Q13.mp3"></audio><button
+        <p id="Q13"><b>Q13 - 前向きな姿勢のアピール</b><audio id="audio_Q13" src="voice/Q13.mp3"></audio><button
                 onclick="document.getElementById('audio_Q13').play()">&#9654; 再生</button></p>
         <p><ruby>最後<rt>さいご</rt></ruby>に、<ruby>私<rt>わたし</rt></ruby>はまだ<ruby>日本<rt>にほん</rt></ruby><ruby>語<rt>ご</rt>
             </ruby>が<ruby>完璧<rt>かんぺき</rt></ruby>ではありませんが、もし<ruby>御<rt>おん</rt></ruby><ruby>社<rt>しゃ</rt>
@@ -499,7 +543,7 @@
         <p>そのために、できることから<ruby>少し<rt>すこ</rt></ruby>ずつ<ruby>挑戦<rt>ちょうせん</rt></ruby>しながら、これからも<ruby>一生<rt>いっしょう</rt>
             </ruby><ruby>懸命<rt>けんめい</rt></ruby>がんばります。</p>
         <br>
-        <p><b>Q14 - いつから日本に住み始めましたか？</b><audio id="audio_Q14" src="voice/Q14.mp3"></audio><button
+        <p id="Q14"><b>Q14 - いつから日本に住み始めましたか？</b><audio id="audio_Q14" src="voice/Q14.mp3"></audio><button
                 onclick="document.getElementById('audio_Q14').play()">&#9654; 再生</button></p>
         <p><ruby>昨年<rt>きょねん</rt></ruby>の4<ruby>月<rt>がつ</rt></ruby>から<ruby>日本<rt>にほん</rt></ruby>に<ruby>住ん<rt>す</rt>
             </ruby>でいます。<ruby>最初<rt>さいしょ</rt></ruby>は<ruby>語学<rt>ごがく</rt></ruby><ruby>学校<rt>がっこう</rt>
@@ -510,8 +554,9 @@
             </ruby>ずつ<ruby>上達<rt>じょうたつ</rt></ruby>し、<ruby>今<rt>いま</rt></ruby>は<ruby>日本<rt>にほん</rt>
             </ruby>での<ruby>就職<rt>しゅうしょく</rt></ruby>に<ruby>挑戦<rt>ちょうせん</rt></ruby>しています。</p>
         <br>
-        <p><b>Q15 - 携わったプロジェクトとリリース有無、担当内容、技術課題、改善点</b><audio id="audio_Q15" src="voice/Q15.mp3"></audio><button
-                onclick="document.getElementById('audio_Q15').play()">&#9654; 再生</button></p>
+        <p id="Q15"><b>Q15 - 携わったプロジェクトとリリース有無、担当内容、技術課題、改善点</b><audio id="audio_Q15"
+                src="voice/Q15.mp3"></audio><button onclick="document.getElementById('audio_Q15').play()">&#9654;
+                再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>は<ruby>台湾<rt>たいわん</rt></ruby>の<ruby>空港<rt>くうこう</rt></ruby>で、<ruby>人<rt>ひと</rt>
             </ruby>の<ruby>流れ<rt>なが</rt></ruby>を<ruby>予測<rt>よそく</rt></ruby>するAI<ruby>システム<rt>しすてむ</rt>
             </ruby>を<ruby>開発<rt>かいはつ</rt></ruby>しました。この<ruby>プロジェクト<rt>ぷろじぇくと</rt></ruby>は、<ruby>実際<rt>じっさい</rt>
@@ -532,7 +577,7 @@
             </ruby>ため、<ruby>他<rt>ほか</rt></ruby>の<ruby>モデル<rt>もでる</rt></ruby>とも<ruby>比較<rt>ひかく</rt>
             </ruby>できればもっと<ruby>良かっ<rt>よ</rt></ruby>たと<ruby>思い<rt>おも</rt></ruby>ます。</p>
         <br>
-        <p><b>Q16 - 自分の専門は、テックオーシャンのプロダクトにどう役立つか？</b><audio id="audio_Q16" src="voice/Q16.mp3"></audio><button
+        <p id="Q16"><b>Q16 - 自分の専門は、テックオーシャンのプロダクトにどう役立つか？</b><audio id="audio_Q16" src="voice/Q16.mp3"></audio><button
                 onclick="document.getElementById('audio_Q16').play()">&#9654; 再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>はこれまで、<ruby>データ<rt>でーた</rt></ruby><ruby>処理<rt>しょり</rt></ruby>や<ruby>モデル<rt>もでる</rt>
             </ruby><ruby>開発<rt>かいはつ</rt></ruby>に<ruby>関わっ<rt>かか</rt></ruby>てきました。たとえば、<ruby>必要<rt>ひつよう</rt>
@@ -544,7 +589,7 @@
             </ruby>や<ruby>システム<rt>しすてむ</rt></ruby>の<ruby>改善<rt>かいぜん</rt></ruby>などで<ruby>力<rt>ちから</rt>
             </ruby>になれると<ruby>思い<rt>おも</rt></ruby>ます。</p>
         <br>
-        <p><b>Q17 - 日本語での自然言語処理の経験と、英語との違いについて</b><audio id="audio_Q17" src="voice/Q17.mp3"></audio><button
+        <p id="Q17"><b>Q17 - 日本語での自然言語処理の経験と、英語との違いについて</b><audio id="audio_Q17" src="voice/Q17.mp3"></audio><button
                 onclick="document.getElementById('audio_Q17').play()">&#9654; 再生</button></p>
         <p><ruby>日本<rt>にほん</rt></ruby><ruby>語<rt>ご</rt></ruby>の<ruby>自然<rt>しぜん</rt></ruby><ruby>言語<rt>げんご</rt>
             </ruby><ruby>処理<rt>しょり</rt></ruby>は<ruby>業務<rt>ぎょうむ</rt></ruby>で<ruby>使っ<rt>つか</rt>
@@ -558,7 +603,7 @@
             </ruby>ました。また、<ruby>文脈<rt>ぶんみゃく</rt></ruby>やあいまいな<ruby>表現<rt>ひょうげん</rt></ruby>も<ruby>多い<rt>おお</rt>
             </ruby>と<ruby>思い<rt>おも</rt></ruby>ます。</p>
         <br>
-        <p><b>Q18 - 古典的な機械学習や自然言語処理の知識はあるか？</b><audio id="audio_Q18" src="voice/Q18.mp3"></audio><button
+        <p id="Q18"><b>Q18 - 古典的な機械学習や自然言語処理の知識はあるか？</b><audio id="audio_Q18" src="voice/Q18.mp3"></audio><button
                 onclick="document.getElementById('audio_Q18').play()">&#9654; 再生</button></p>
         <p>はい、<ruby>基本<rt>きほん</rt></ruby><ruby>的<rt>てき</rt></ruby>な<ruby>機械<rt>きかい</rt></ruby><ruby>学習<rt>がくしゅう</rt>
             </ruby>の<ruby>知識<rt>ちしき</rt></ruby>はあります。<ruby>分類<rt>ぶんるい</rt></ruby>や<ruby>回帰<rt>かいき</rt>
@@ -571,8 +616,9 @@
                 </rt></ruby>て<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>数値<rt>すうち</rt></ruby>に<ruby>変える<rt>か</rt>
             </ruby><ruby>分析<rt>ぶんせき</rt></ruby>をしたことがあります。</p>
         <br>
-        <p><b>Q19 - 「働くこと」にどんな意味があるか？いつからその考えができたか？</b><audio id="audio_Q19" src="voice/Q19.mp3"></audio><button
-                onclick="document.getElementById('audio_Q19').play()">&#9654; 再生</button></p>
+        <p id="Q19"><b>Q19 - 「働くこと」にどんな意味があるか？いつからその考えができたか？</b><audio id="audio_Q19"
+                src="voice/Q19.mp3"></audio><button onclick="document.getElementById('audio_Q19').play()">&#9654;
+                再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>にとって、<ruby>働く<rt>はたら</rt></ruby>ことはお<ruby>金<rt>かね</rt></ruby>を<ruby>得る<rt>え</rt>
             </ruby>ためだけでなく、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>成長<rt>せいちょう</rt></ruby>や<ruby>達成<rt>たっせい</rt>
             </ruby><ruby>感<rt>かん</rt></ruby>を<ruby>感じる<rt>かん</rt></ruby>ための<ruby>手段<rt>しゅだん</rt></ruby>だと<ruby>思い
@@ -584,8 +630,9 @@
                 <rt>しごと</rt>
             </ruby>をしたい」という<ruby>気持ち<rt>きも</rt></ruby>が<ruby>強く<rt>つよ</rt></ruby>なりました。</p>
         <br>
-        <p><b>Q20 - スカウト文を作るとき、小規模LLMと大規模LLM＋RAGのどちらが良いか？</b><audio id="audio_Q20" src="voice/Q20.mp3"></audio><button
-                onclick="document.getElementById('audio_Q20').play()">&#9654; 再生</button></p>
+        <p id="Q20"><b>Q20 - スカウト文を作るとき、小規模LLMと大規模LLM＋RAGのどちらが良いか？</b><audio id="audio_Q20"
+                src="voice/Q20.mp3"></audio><button onclick="document.getElementById('audio_Q20').play()">&#9654;
+                再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>は、<ruby>大<rt>だい</rt></ruby><ruby>規模<rt>きぼ</rt></ruby>LLM＋RAGの<ruby>方<rt>ほう</rt>
             </ruby>が<ruby>良い<rt>いい</rt></ruby>と<ruby>思い<rt>おも</rt></ruby>ます。</p>
         <p><ruby>最近<rt>さいきん</rt></ruby>は、<ruby>多く<rt>おお</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>がたくさんの<ruby>スカウト<rt>すかうと
@@ -597,7 +644,7 @@
                 <rt>かんが</rt>
             </ruby>ています。</p>
         <br>
-        <p><b>Q21 - 自分の強みはテックオーシャンでどう活かせるか？</b><audio id="audio_Q21" src="voice/Q21.mp3"></audio><button
+        <p id="Q21"><b>Q21 - 自分の強みはテックオーシャンでどう活かせるか？</b><audio id="audio_Q21" src="voice/Q21.mp3"></audio><button
                 onclick="document.getElementById('audio_Q21').play()">&#9654; 再生</button></p>
         <p><ruby>私<rt>わたし</rt></ruby>はPythonを<ruby>使っ<rt>つか</rt></ruby>た<ruby>データ<rt>でーた</rt></ruby><ruby>処理<rt>しょり
                 </rt></ruby>と、<ruby>問題<rt>もんだい</rt></ruby>を<ruby>整理<rt>せいり</rt></ruby>して<ruby>解決<rt>かいけつ</rt>
